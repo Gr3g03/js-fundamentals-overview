@@ -9,21 +9,25 @@ const Elidon = Object.freeze({
   id: 1,
   hobbies: ["Memes", "Ed's haircut", "Visard's jokes"]
 });
+
 const Artiola = Object.freeze({
   name: "Artiola",
   id: 2,
   hobbies: ["Cats", "Chatting"]
 });
+
 const Marsel = Object.freeze({
-  name: "Artiola",
+  name: "Marsel",
   id: 3,
   hobbies: ["Basketball", "Being pretty tall"]
 });
+
 const Visard = Object.freeze({
   name: "Visard",
   id: 4,
   hobbies: ["Fishing", "Real estate", "Being very freaking tall"]
 });
+
 const Rinor = Object.freeze({
   name: "Rinor",
   id: 5,
@@ -36,12 +40,20 @@ const data = Object.freeze({
 
 // 1. Print out the name of each person in the data object.
 // 1.1 There are many ways to achieve the above. Try to think of another way.
-
+for (const name of data.people) {
+  console.log(name)
+}
 // 2. Count the total number of hobbies
+const count = data.people.filter(e => e.hobbies)
 
 // 3. Create a mutable copy of Visard and change his name to "Visard of Oz"
 
+const upggratedVisard = JSON.parse(JSON.stringify(Visard))
+upggratedVisard.name = "Visard of Oz"
+
+
 // 4. Capitalise all hobbies in the data object
+
 
 // 5. Create a new object called "peopleByName" and add all the people from the data object to it. It should look like this:
 // peopleByName = {
