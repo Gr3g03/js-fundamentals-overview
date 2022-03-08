@@ -16,6 +16,7 @@ const NicosRepositories = `https://api.github.com/users/minimumviableperson/repo
 const repositories = function getNamesOfNicosRepos() {
     fetch('NicosRepositories')
         .then(resp => resp.json())
+        .then(json => console.log(json))
 }
 repositories.name
 
@@ -27,28 +28,11 @@ repositories.name
 // }
 
 
-const posts = [
-    {
-        'id': 1,
-        'title': 'first post',
-        'text': 'texttext'
-    },
-    {
-        'id': 1,
-        'title': 'first post',
-        'text': 'texttext'
-    },
-    {
-        'id': 1,
-        'title': 'first post',
-        'text': 'texttext'
-    }
-]
+const post = fetch(`http://localhost:3000/posts`)
+    .then(resp => resp.json())
+    .then(json => console.log(json))
 
 
-app.get('/posts', (req, res) => {
-    res.send(posts)
-})
 
 // 2.1 Write a function called createPost that:
 // - takes a post as an argument
