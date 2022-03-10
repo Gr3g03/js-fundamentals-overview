@@ -40,8 +40,8 @@ const data = Object.freeze({
 
 // 1. Print out the name of each person in the data object.
 // 1.1 There are many ways to achieve the above. Try to think of another way.
-for (const name of data.people) {
-  console.log(name)
+for (const person of data.people) {
+  console.log(person.name)
 }
 // 2. Count the total number of hobbies
 const count = data.people.filter(e => e.hobbies)

@@ -14,7 +14,7 @@ const NicosRepositories = `https://api.github.com/users/minimumviableperson/repo
 
 
 const repositories = function getNamesOfNicosRepos() {
-    fetch('NicosRepositories')
+    return fetch('NicosRepositories')
         .then(resp => resp.json())
         .then(json => console.log(json))
 }
@@ -38,3 +38,14 @@ const post = fetch(`http://localhost:3000/posts`)
 // - takes a post as an argument
 // - save your post in the JSON server
 // - console.log the newly created post from the response (it must contain the new post's id);
+
+function createPost(post) {
+    return fetch('NicosRepositories', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newpost: post.newpost)
+    })
+        .then(resp => resp.json())
+}
